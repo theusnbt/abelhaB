@@ -16,12 +16,21 @@ class Object{
     }
 }
 
-let bee = new Object(200, 500, 100, 100, "yellow")
-let spider = new Object(100, 100, 100, 100, "black")
+let abelha = new Object(200, 500, 100, 100, "yellow")
+let aranha = new Object(100, 100, 100, 100, "black")
+
+document.addEventListener("keydown", (e) => {
+    if(e.key == "a")
+        abelha.posx -= 10
+    
+    if (e.key =="d")
+        abelha.posx += 10
+    
+})
 
 function draw(){ //Desenha elementos na tela
-    bee.drawObject()
-    spider.drawObject()
+    abelha.drawObject()
+    aranha.drawObject()
 }
 
 function update(){ //atualiza os frames
@@ -29,6 +38,7 @@ function update(){ //atualiza os frames
 }
 
 function main(){
+    colmeia.clearRect(0, 0, 500, 690)
     draw()
     update()
 }
