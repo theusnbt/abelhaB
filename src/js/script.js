@@ -1,47 +1,43 @@
-let colmeia = document.getElementById("palco").getContext("2d")
+let colmeia = document.getElementById("palco").getContext("2d");
 
-class Object{
-    constructor(posx, posy, width, height, color){
-        this.posx = posx
-        this.posy = posy
-        this.width = width
-        this.height = height
-        this.color = color
-        
-    }
+let abelha = new Abelha(200, 500, 100, 100, "yellow");
+let aranha = new Obj(100, 100, 100, 100, "black");
 
-    drawObject(){
-        colmeia.fillStyle = this.color
-        colmeia.fillRect(this.posx, this.posy, this.width, this.height)
-    }
-}
-
-let abelha = new Object(200, 500, 100, 100, "yellow")
-let aranha = new Object(100, 100, 100, 100, "black")
-
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", function(e){
     if(e.key == "a")
-        abelha.posx -= 10
+        abelha.dir = -1;
+
+    if (e.key =="d")
+        abelha.dir = 1;
+    
+});
+
+document.addEventListener("keyup", function(e){
+    if(e.key == "a")
+        abelha.dir = 0;
     
     if (e.key =="d")
-        abelha.posx += 10
+        abelha.dir = 0;
     
-})
+});
 
-function draw(){ //Desenha elementos na tela
-    abelha.drawObject()
-    aranha.drawObject()
+//Desenha elementos na tela
+function draw(){ 
+    abelha.drawObject();
+    aranha.drawObject();
 }
 
-function update(){ //atualiza os frames
 
+//atualiza os frames
+function update(){ 
+    abelha.move();
 }
 
 function main(){
-    colmeia.clearRect(0, 0, 500, 690)
-    draw()
-    update()
+    colmeia.clearRect(0, 0, 500, 690);
+    update();
+    draw();
+    
 }
 
-setInterval(main, 10)//chama a func em 10s
-
+setInterval(main, 10); //chama a func em 10s
