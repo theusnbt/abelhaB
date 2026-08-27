@@ -1,7 +1,7 @@
 let colmeia = document.getElementById("palco").getContext("2d");
 
 let abelha = new Abelha(200, 500, 100, 100, "yellow");
-let aranha = new Obj(100, 100, 100, 100, "black");
+let aranha = new Aranha(100, 100, 100, 100, "black");
 
 document.addEventListener("keydown", function(e){
     if(e.key == "a")
@@ -31,13 +31,14 @@ function draw(){
 //atualiza os frames
 function update(){ 
     abelha.move();
+    aranha.move();
 }
 
 function main(){
     colmeia.clearRect(0, 0, 500, 690);
     update();
     draw();
-    
 }
 
 setInterval(main, 10); //chama a func em 10s
+

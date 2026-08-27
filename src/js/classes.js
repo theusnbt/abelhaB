@@ -17,7 +17,15 @@ class Obj{
 
 class Abelha extends Obj{
     dir = 0;
-     move(){
+    move(){
         this.posx += this.dir;
+    }
+}
+
+class Aranha extends Obj{
+    move(){
+        this.posy -= 1;
+
+        //if(aranha.posy > 690)
     }
 }
