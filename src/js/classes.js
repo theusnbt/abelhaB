@@ -24,7 +24,10 @@ class Abelha extends Obj{
 
 class Aranha extends Obj{
     move(){
-        this.posy += 1;
+        this.posy += 3
+        if(this.posy > 690){
+            this.posy = -100
+            this.posx = Math.random() * (400)
+        }
     }
 }
-

@@ -3,16 +3,16 @@ let colmeia = document.getElementById("palco").getContext("2d");
 let abelha = new Abelha(200, 500, 100, 100, "yellow");
 let aranha = new Aranha(100, 100, 100, 100, "black");
 
-document.addEventListener("keydown", function(e){
+document.addEventListener("keydown", (e) => {
     if(e.key == "a")
-        abelha.dir = -1;
+        abelha.dir = -3;
 
     if (e.key =="d")
-        abelha.dir = 1;
+        abelha.dir = 3;
     
 });
 
-document.addEventListener("keyup", function(e){
+document.addEventListener("keyup", (e) => {
     if(e.key == "a")
         abelha.dir = 0;
     
@@ -41,4 +41,3 @@ function main(){
 }
 
 setInterval(main, 10); //chama a func em 10s
-
