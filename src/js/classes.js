@@ -8,9 +8,11 @@ class Obj{
         
     }
 
-    drawObject(){
-        colmeia.fillStyle = this.color;
-        colmeia.fillRect(this.posx, this.posy, this.width, this.height);
+    desenharObjeto(){
+        let img = new Image();
+        img.src = this.color;
+        colmeia.drawImage(img, this.posx, this.posy, this.width, this.height);
+        
     }
 }
 
