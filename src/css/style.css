@@ -12,4 +12,6 @@ canvas{
     top: 0;
     bottom:0;
     position: absolute;
+    background-image: url(../assets/img/Bee1.jpeg);
+    background-size:contain;
 }
