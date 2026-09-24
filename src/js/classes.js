@@ -24,8 +24,7 @@ class Abelha extends Obj{
 
 class Aranha extends Obj{
     move(){
-        this.posy -= 1;
-
-        //if(aranha.posy > 690)
+        this.posy += 1;
     }
 }
+
