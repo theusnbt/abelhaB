@@ -1,7 +1,8 @@
 let colmeia = document.getElementById("palco").getContext("2d");
 
-let abelha = new Abelha(200, 500, 100, 100, "../assets/img/Abelha1.jpeg");
-let aranha = new Aranha(100, 100, 100, 100, "../assets/img/Aranha1.jpeg");
+let bg = new Obj (0,0,500,690,"img/FundoJogo.jpeg" )
+let abelha = new Abelha(200, 500, 100, 100, "img/Abelha1.jpeg");
+let aranha = new Aranha(100, 100, 100, 100, "img/Aranha1.jpeg");
 
 document.addEventListener("keydown", (e) => {
     if(e.key == "a")
@@ -23,6 +24,7 @@ document.addEventListener("keyup", (e) => {
 
 //Desenha elementos na tela
 function desenho(){ 
+    bg.desenharObjeto()
     abelha.desenharObjeto();
     aranha.desenharObjeto();
 }
